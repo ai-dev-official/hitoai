@@ -7,7 +7,10 @@ const Home = () => {
     <section className="home__container">
         <div className="left">
           <p>Welcome To</p>
+
           <h1><span className="gt">GT</span> Web Design</h1>
+          <h5 class="elementor-heading-title elementor-size-default">HitoAI Built to help businesses on their journey to innovation</h5>
+          <p>HItoAI Limited is an AI-driven company dedicated to developing and implementing cutting-edge AI technologies across various business sectors. Our mission is to transform business operations with innovative AI solutions that enhance efficiency, productivity, and growth.<br/></p>
           <a href="#" className="btn">Get Started</a>
           <a href="#" className="btn cyan">Learn More</a>
         </div>
