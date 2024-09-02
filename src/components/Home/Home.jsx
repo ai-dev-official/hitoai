@@ -8,7 +8,7 @@ const Home = () => {
         <div className="home__content">
         <div className="home__leading">
           <div className="home__leading__h2">
-          <h2 class="home___heading">From Human Intelligence to <span className="colored__title">Artificial Intelligence</span></h2>
+          <h2 className="home___heading">From Human Intelligence to <span className="colored__title">Artificial Intelligence</span></h2>
 
           </div>
           <div className="home__subheading">

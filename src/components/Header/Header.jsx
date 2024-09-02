@@ -61,16 +61,22 @@ const Header = () => {
       <div className={`mobile__nav ${isMobileNavActive ? 'active' : ''}`}>
         <ul className="menu__items">
           <li onClick={handleMobileMenuItemClick}>
-            <a href="#about">About</a>
+            <a href="/">Home</a>
           </li>
           <li onClick={handleMobileMenuItemClick}>
-            <a href="#projects">Our Projects</a>
+            <a href="/products">Products</a>
           </li>
           <li onClick={handleMobileMenuItemClick}>
-            <a href="#testimonials">Testimonials</a>
+            <a href="/services">Services</a>
           </li>
           <li onClick={handleMobileMenuItemClick}>
-            <a href="#contact">Contact</a>
+            <a href="/updates">Updates</a>
+          </li>
+          <li onClick={handleMobileMenuItemClick}>
+            <a href="/about">About</a>
+          </li>
+          <li onClick={handleMobileMenuItemClick}>
+            <a href="/contact">Contact</a>
           </li>
         </ul>
       </div>
@@ -89,28 +95,33 @@ const Header = () => {
 
         <ul className="menu__items">
           <li>
-            <a href="#about" className="active">About</a>
+            <a href="/" className="active">Home</a>
           </li>
           <li>
-            <a href="#projects">Our Projects</a>
+            <a href="/products">Products</a>
           </li>
           <li>
-            <a href="#testimonials">Testimonials</a>
+            <a href="/services">Services</a>
           </li>
           <li>
-            <a href="#contact">Contact</a>
+            <a href="/updates">Updates</a>
           </li>
           <li>
-            <a href="#contact" className="btn">Get Started</a>
+            <a href="/about">About</a>
+          </li>
+          <li>
+            <a href="/contact" className="btn">Contact</a>
           </li>
         </ul>
       </nav>
 
       {/* Sections to observe (for intersection observer) */}
-      <div id="about" ref={(el) => sectionRefs.current[0] = el}></div>
-      <div id="projects" ref={(el) => sectionRefs.current[1] = el}></div>
-      <div id="testimonials" ref={(el) => sectionRefs.current[2] = el}></div>
-      <div id="contact" ref={(el) => sectionRefs.current[3] = el}></div>
+      <div id="home" ref={(el) => sectionRefs.current[0] = el}></div>
+      <div id="products" ref={(el) => sectionRefs.current[1] = el}></div>
+      <div id="services" ref={(el) => sectionRefs.current[2] = el}></div>
+      <div id="updates" ref={(el) => sectionRefs.current[3] = el}></div>
+      <div id="about" ref={(el) => sectionRefs.current[4] = el}></div>
+      <div id="contact" ref={(el) => sectionRefs.current[5] = el}></div>
     </div>
   );
 };

@@ -83,8 +83,8 @@ const Partners = () => {
         <div className="scrolling__wrapper__second" ref={sponsorCarouselRef}>
           {partners.map((image, index) => (
             <div className="sponsor__item" key={index}>
+              <span>Partner</span>
               <img src={image} alt={`Partner ${index + 1}`} className='partner__img' />
-              Partner {index + 1}
             </div>
           ))}
         </div>
@@ -104,8 +104,8 @@ const Partners = () => {
         <div className="scrolling__wrapper" ref={carouselRef}>
           {investors.concat(investors).map((image, index) => (
             <div className="partner__item" key={index}>
+              <span>Investor</span>
               <img src={image} alt={`Investor ${index % totalInvestorItems + 1}`} className='partner__img' />
-              Partner {index % totalInvestorItems + 1}
             </div>
           ))}
         </div>
