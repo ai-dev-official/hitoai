@@ -1,17 +1,25 @@
 import React, { useEffect, useState, useRef } from 'react';
-import Partner1Image from "../../assets/AmazonLogo.png";
+import Partner1Image from "../../assets/mongo-db.jpeg";
 import Partner2Image from "../../assets/auth0.jpeg";
 import Partner3Image from "../../assets/f6s.jpeg";
 import Partner4Image from "../../assets/github.jpeg";
 import Partner5Image from "../../assets/imr.jpeg";
-import Partner6Image from "../../assets/leo.jpeg";
+import Partner6Image from "../../assets/biasadra.jpg";
+import Investor1Image from "../../assets/ethaum.png";
+import Investor2Image from "../../assets/auth0.jpeg";
+import Investor3Image from "../../assets/trans4mers.webp";
+import Investor4Image from "../../assets/imr.jpeg";
 
 const Partners = () => {
   const [activeCheckpoint, setActiveCheckpoint] = useState(0);
   const totalItems = 6; // Total number of unique partner items
+  const totalInvestorItems = 4; // Total number of unique sponsors items
   const intervalTime = 3000; // Time interval for moving to the next checkpoint
   const carouselRef = useRef(null);
   const sponsorCarouselRef = useRef(null);
+
+  const partners = [Partner1Image, Partner2Image, Partner3Image, Partner4Image, Partner5Image, Partner6Image];
+  const investors = [Investor1Image, Investor2Image, Investor3Image, Investor4Image];
 
   // Auto-scroll to the next checkpoint
   useEffect(() => {
@@ -33,7 +41,7 @@ const Partners = () => {
       });
 
       // Reset scroll position to create continuous effect
-      if (activeCheckpoint === totalItems - 1) {
+      if (activeCheckpoint === totalInvestorItems - 1) {
         setTimeout(() => {
           carouselRef.current.scrollTo({
             left: 0,
@@ -43,13 +51,13 @@ const Partners = () => {
         }, intervalTime);
       }
     }
-  }, [activeCheckpoint, totalItems]);
+  }, [activeCheckpoint, totalInvestorItems, intervalTime]);
 
   // Scroll the upper carousel from left to right
   useEffect(() => {
     if (sponsorCarouselRef.current) {
       const itemWidth = sponsorCarouselRef.current.firstChild.offsetWidth;
-      const scrollPosition = itemWidth * (totalItems - 1 - activeCheckpoint);
+      const scrollPosition = itemWidth * activeCheckpoint;
       sponsorCarouselRef.current.scrollTo({
         left: scrollPosition,
         behavior: 'smooth',
@@ -59,23 +67,23 @@ const Partners = () => {
       if (activeCheckpoint === totalItems - 1) {
         setTimeout(() => {
           sponsorCarouselRef.current.scrollTo({
-            left: itemWidth * (totalItems - 1),
+            left: 0,
             behavior: 'auto',
           });
           setActiveCheckpoint(0);
         }, intervalTime);
       }
     }
-  }, [activeCheckpoint, totalItems]);
+  }, [activeCheckpoint, totalItems, intervalTime]);
 
   return (
-    <section id='#partners' className='partner__container'>
+    <section id='partners' className='partner__container'>
       <h2 className="common__title">Our Trusted Collaborators</h2>
       <div className="sponsors__wrapper">
         <div className="scrolling__wrapper__second" ref={sponsorCarouselRef}>
-          {Array.from({ length: totalItems }).map((_, index) => (
+          {partners.map((image, index) => (
             <div className="sponsor__item" key={index}>
-              <img src={eval(`Partner${index + 1}Image`)} alt={`Partner ${index + 1}`} className='partner__img' />
+              <img src={image} alt={`Partner ${index + 1}`} className='partner__img' />
               Partner {index + 1}
             </div>
           ))}
@@ -94,17 +102,10 @@ const Partners = () => {
 
       <div className="partners__wrapper">
         <div className="scrolling__wrapper" ref={carouselRef}>
-          {Array.from({ length: totalItems }).map((_, index) => (
+          {investors.concat(investors).map((image, index) => (
             <div className="partner__item" key={index}>
-              <img src={eval(`Partner${index + 1}Image`)} alt={`Partner ${index + 1}`} className='partner__img' />
-              Partner {index + 1}
-            </div>
-          ))}
-          {/* Repeat items to simulate infinite loop */}
-          {Array.from({ length: totalItems }).map((_, index) => (
-            <div className="partner__item" key={index + totalItems}>
-              <img src={eval(`Partner${index + 1}Image`)} alt={`Partner ${index + 1}`} className='partner__img' />
-              Partner {index + 1}
+              <img src={image} alt={`Investor ${index % totalInvestorItems + 1}`} className='partner__img' />
+              Partner {index % totalInvestorItems + 1}
             </div>
           ))}
         </div>

@@ -180,13 +180,87 @@ a.btn.cyan:hover {
   font-family: "Montserrat", sans-serif;
   margin: 8px 0 28px 0;
 }
-
-.home__container .left .gt {
+.colored__title{
+  color: var(--red-color);
+}
+.home__container .home__leading  {
   color: var(--red-color);
 }
 
-.home__container .left .btn {
+.home__container .home__leading .btn {
   margin-right: 20px;
+}
+.home__content  {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100vw;
+  margin: auto;
+  max-width: 80vw;
+}
+
+.home__leading{
+  position: relative;
+  display: grid;
+  align-content: start;
+  justify-items: start;
+  grid-gap: 20px;
+  gap: 20px;
+  max-width: 40vw;
+  text-align: left;
+  flex-basis: 50%;
+}
+
+.home__trailing{
+  flex-basis: 50%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.home__trailing img{
+  height: 60vh;
+  width: 30vw;
+  border-radius: 20px;
+}
+
+.home__leading__h2{
+  margin: 20px 0;
+}
+.home__leading__h2 h2 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 3rem;
+  margin: 0;
+  text-align: left;
+}
+
+.home__heading{
+  font-style: normal;
+  font-weight: 700;
+  font-size: 3rem;
+  margin: 0;
+}
+
+.home__subheading p{
+  max-width: 50vw;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 130%;
+  margin: 20px auto;
+}
+
+.home__subheading h5 {
+  color: #1C244B;
+  font-family: "Poppins", Sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  text-transform: none;
+  font-style: normal;
+  text-decoration: none;
+  line-height: 1.2em;
+  letter-spacing: 0px;
+  word-spacing: 0em;
 }
 
 .home__container .right {
@@ -325,7 +399,7 @@ a.btn.cyan:hover {
 
 /* Brands Section */
 
-.brands-section {
+/* .brands-section {
   box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.12);
   border-radius: 24px;
   background: var(--light-color);
@@ -374,7 +448,7 @@ section h2::after {
   background: var(--red-color);
   top: 40px;
   transform: translateX(-43px);
-}
+} */
 
 /* About Us */
 
@@ -434,7 +508,7 @@ section h2::after {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 100%;
+  width: 80vw;
 }
 .product__image {
   width: 400px;
@@ -544,7 +618,7 @@ section h2::after {
 }
 
 .product__label__monthly,
-.product__label__annually{
+.product__label__suswell{
   font-style: normal;
     font-weight: normal;
     font-size: 17px;
@@ -585,7 +659,10 @@ section h2::after {
   align-items: center;
 }
 
+
+
 .product__buttons__wrapper a {
+  font-size: 10px;
   text-decoration: none;
 }
 
@@ -768,7 +845,7 @@ section h2::after {
   margin-right: 40px;
 }
 
-
+.simulator__modal__wrapper,
 .team__modal__wrapper {
   position: fixed;
   top: 0;
@@ -785,12 +862,13 @@ section h2::after {
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
 }
-
+.simulator__modal__wrapper.open,
 .team__modal__wrapper.open {
   opacity: 1;
   visibility: visible;
 }
 
+.simulator__modal__content,
 .team__modal__content {
   position: relative;
    background-color:  #ffffff; 
@@ -800,7 +878,9 @@ section h2::after {
   border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 }
-
+.form-group input[type="text"], textarea {
+  box-shadow: none;
+}
 .team__modal__teams {
   display: flex;
   justify-content: space-around;
@@ -850,6 +930,7 @@ section h2::after {
     text-align: left;
 }
 
+.simulator__modal__close,
 .team__modal__close {
   position: absolute;
   top: .5rem;
@@ -860,6 +941,7 @@ section h2::after {
   transition: 0.3s;
 }
 
+.simulator__modal__close:hover,
 .team__modal__close:hover {
   transform: rotate(90deg);
 }
@@ -1070,7 +1152,7 @@ footer a:hover {
   }
 
   /* Brands Section */
-
+/* 
   .brands-section {
     border-radius: 0;
     padding: 32px 0;
@@ -1106,7 +1188,7 @@ footer a:hover {
 
   .brands-section .brands-line-2 {
     width: 60%;
-  }
+  } */
 
   /* About Us */
 

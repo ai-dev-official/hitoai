@@ -8,9 +8,13 @@ import AltProductImage from "../../assets/model.png"; // Alternate product image
 
 const Products = () => {
   const [isSecondProductVisible, setIsSecondProductVisible] = useState(false);
+  const [isSusNet, setSIsSusNet] = useState(false);
+
+
 
   const handleToggle = () => {
     setIsSecondProductVisible(!isSecondProductVisible);
+    setSIsSusNet(true);
   };
 
   // Data for the first product item
@@ -18,7 +22,7 @@ const Products = () => {
     description: "SusNet is HitoAI’s flagship AI-powered sustainable energy management system designed to optimize energy usage, ensuring efficiency and sustainability in the growing market. SusNet is a registered trademark with the IP Office of Ireland.",
     packImages: [
       { id:0, src: PackImage2, alt: "Pack Image A", text: "SusNet is a fully automated energy management network led by AI techniques. The POC of 50-65% bill cutting is validated." },
-      { id:1, src: PackImage1, alt: "Pack Image B", text: "SusNet is enabled with global and local optimisation for energy consumption via specific and highly correlational features (&gt;90%) with various&nbsp; IOT components." },
+      { id:1, src: PackImage1, alt: "Pack Image B", text: "SusNet is enabled with global and local optimisation for energy consumption via specific and highly correlational features (>90%) with various IOT components." },
       { id:2, src: PackImage, alt: "Pack Image C", text: "SusNet is designed with the close-loop structure to process comprehensive online data into a final decision and automatically act back on local and global components in seconds." },
       { id:3, src: PackImage, alt: "Pack Image C", text: "Easy and simple to install without any technical knowledge, simple UI to sign up and that is really it!" },
     ],
@@ -51,14 +55,14 @@ const Products = () => {
             onChange={handleToggle}
           />
           <label className="product__switch__label" htmlFor="product__switch">
-            <p className="product__label__monthly">SusNet</p>
-            <p className="product__label__annually">SelWell</p>
+            <p className="product__label__susnet">SusNet</p>
+            <p className="product__label__suswell">SelWell</p>
             <span className="product__switch__button"></span>
           </label>
         </div>
 
         {/* Render ProductItem with the appropriate data based on the toggle state */}
-        {!isSecondProductVisible && <ProductItem {...firstProductData} />}
+        {!isSecondProductVisible && <ProductItem {...firstProductData} isSusNet={true} />}
         {isSecondProductVisible && <ProductItem {...secondProductData} />}
       </div>
     </section>

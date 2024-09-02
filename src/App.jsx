@@ -16,7 +16,7 @@ function App() {
      <Products />
      <Partners />
      <Team />
-     <Simulator />
+     {/* <Simulator /> */}
      <Footer />
     </>
   )

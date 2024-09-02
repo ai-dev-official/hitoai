@@ -10,7 +10,7 @@ const TeamModal = ({ closeModal, isModalOpen, team }) => {
                 <h4 className="team__modal__title">
                     {team.name} - {team.position}  
                 </h4>
-                <IoMdClose size={24} onClick={closeModal} className="uil uil-times team__modal__close" />
+                <IoMdClose size={24} onClick={closeModal} className="team__modal__close" />
                 
                 <div className="team__modal__teams">
                     <div className="team__modal__leading">

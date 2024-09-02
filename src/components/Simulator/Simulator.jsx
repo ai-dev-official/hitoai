@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import "./Simulator.css"
+import "./Simulator.css";
+import { IoMdClose } from "react-icons/io";
 
-const Simulator = () => {
+const SimulatorModal = ({ closeModal, isModalOpen }) => {
     const [eircode, setEircode] = useState('');
     const [date, setDate] = useState('');
     const [time, setTime] = useState('');
@@ -20,14 +21,14 @@ const Simulator = () => {
 
         console.log('Form Data:', formData);
 
-        // Here you can implement the logic to calculate the AI activation
-        // For example, making a request to a backend or performing calculations
     };
 
     return (
-        <section className="section">
-            <div className="common__container">
-                <h2>AI Activation Calculator</h2>
+        <div className={`simulator__modal__wrapper ${isModalOpen ? 'open' : ''}`}>
+            <div className="simulator__modal__content">
+                <h2 className="simulator__modal__title">AI Activation Calculator</h2>
+                <IoMdClose size={24} onClick={closeModal} className="simulator__modal__close" />
+
                 <form onSubmit={handleSubmit}>
                     <div className="form-group">
                         <label htmlFor="eircode">Your Eircode</label>
@@ -82,11 +83,11 @@ const Simulator = () => {
                         />
                     </div>
 
-                    <button type="submit" className="btn btn-primary">Calculate Activation</button>
+                    <a type="submit" className="btn">Calculate Activation</a>
                 </form>
             </div>
-        </section>
+        </div>
     );
 }
 
-export default Simulator;
+export default SimulatorModal;

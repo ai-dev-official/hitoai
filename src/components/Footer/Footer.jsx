@@ -67,9 +67,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <p className="copyright">
-        This website was designed by Godson T. &copy; 2020
-      </p>
+      <p className="copyright">&copy; 2024 Azubuike Ibe, All Rights Reserved.</p>
     </footer>
   );
 };
