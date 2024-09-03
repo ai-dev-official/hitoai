@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import "../../index.css";
 import { BsFillMenuButtonWideFill } from "react-icons/bs";
-import LogoImage from "../../assets/newlogo.png"
+import LogoImage from "../../assets/images/newlogo.png"
 
 
 
@@ -83,7 +83,8 @@ const Header = () => {
 
       {/* Desktop Navigation */}
       <nav className="desktop__nav">
-        <div className="logo">
+       <div className="nav__wrapper">
+       <div className="logo">
           <a href="#">
             <img src={LogoImage} alt="logo" className="logo__img"/>
           </a>
@@ -113,15 +114,16 @@ const Header = () => {
             <a href="/contact" className="btn">Contact</a>
           </li>
         </ul>
+       </div>
       </nav>
 
       {/* Sections to observe (for intersection observer) */}
-      <div id="home" ref={(el) => sectionRefs.current[0] = el}></div>
+      {/* <div id="home" ref={(el) => sectionRefs.current[0] = el}></div>
       <div id="products" ref={(el) => sectionRefs.current[1] = el}></div>
       <div id="services" ref={(el) => sectionRefs.current[2] = el}></div>
       <div id="updates" ref={(el) => sectionRefs.current[3] = el}></div>
       <div id="about" ref={(el) => sectionRefs.current[4] = el}></div>
-      <div id="contact" ref={(el) => sectionRefs.current[5] = el}></div>
+      <div id="contact" ref={(el) => sectionRefs.current[5] = el}></div> */}
     </div>
   );
 };

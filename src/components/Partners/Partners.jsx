@@ -1,14 +1,14 @@
 import React, { useEffect, useState, useRef } from 'react';
-import Partner1Image from "../../assets/mongo-db.jpeg";
-import Partner2Image from "../../assets/auth0.jpeg";
-import Partner3Image from "../../assets/f6s.jpeg";
-import Partner4Image from "../../assets/github.jpeg";
-import Partner5Image from "../../assets/imr.jpeg";
-import Partner6Image from "../../assets/biasadra.jpg";
-import Investor1Image from "../../assets/ethaum.png";
-import Investor2Image from "../../assets/auth0.jpeg";
-import Investor3Image from "../../assets/trans4mers.webp";
-import Investor4Image from "../../assets/imr.jpeg";
+import Partner1Image from "../../assets/images/mongo-db.jpeg";
+import Partner2Image from "../../assets/images/auth0.jpeg";
+import Partner3Image from "../../assets/images/f6s.jpeg";
+import Partner4Image from "../../assets/images/github.jpeg";
+import Partner5Image from "../../assets/images/imr.jpeg";
+import Partner6Image from "../../assets/images/biasadra.jpg";
+import Investor1Image from "../../assets/images/ethaum.png";
+import Investor2Image from "../../assets/images/auth0.jpeg";
+import Investor3Image from "../../assets/images/trans4mers.webp";
+import Investor4Image from "../../assets/images/imr.jpeg";
 
 const Partners = () => {
   const [activeCheckpoint, setActiveCheckpoint] = useState(0);

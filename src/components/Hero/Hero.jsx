@@ -1,8 +1,8 @@
 import React from 'react'
-import HomeImg from '../../assets/homeimg.jpg';
-import HomeBackground from "../../assets/HeroBG.svg";
+import HomeImg from '../../assets/images/homeimg.jpg';
+import HomeBackground from "../../assets/images/HeroBG.svg";
 
-const Home = () => {
+const Hero = () => {
   return (
     <section className="home__container">
         <div className="home__content">
@@ -33,4 +33,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Hero

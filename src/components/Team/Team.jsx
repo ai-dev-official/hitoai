@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
-import ArslanImage from "../../assets/arslan.png"
-import AswanthImage from "../../assets/aswanth.png"
-import BaqerImage from "../../assets/baqer.jpg"
-import FatimaImage from "../../assets/fatima.png"
-import MinaImage from "../../assets/mina.jpg"
-import OmkarImage from "../../assets/omkar.jpeg"
-import SadekImage from "../../assets/sadek.jpg"
-import ShahramImage from "../../assets/shahram.jpeg"
-import ShenalImage from "../../assets/shenal.jpg"
+import ArslanImage from "../../assets/images/arslan.png"
+import AswanthImage from "../../assets/images/aswanth.png"
+import BaqerImage from "../../assets/images/baqer.jpg"
+import FatimaImage from "../../assets/images/fatima.png"
+import MinaImage from "../../assets/images/mina.jpg"
+import OmkarImage from "../../assets/images/omkar.jpeg"
+import SadekImage from "../../assets/images/sadek.jpg"
+import ShahramImage from "../../assets/images/shahram.jpeg"
+import ShenalImage from "../../assets/images/shenal.jpg"
 import { FaStar } from "react-icons/fa";
 import { FaStarHalfAlt } from "react-icons/fa";
 import { BiSolidQuoteLeft } from "react-icons/bi";
