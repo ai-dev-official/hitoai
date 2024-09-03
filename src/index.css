@@ -1444,10 +1444,18 @@ footer a:hover {
   display: flex;
   justify-content: space-between;
   padding: 100px 0 32px 0;
+  width: 80vw;
+  margin: auto;
 }
 
 .footer__container .logo {
   align-self: center;
+}
+
+.footer__logo, .footer__logo img{
+  height: 10vw;
+  width: 10vw;
+  border-radius: 20px;
 }
 
 .footer__container ul {

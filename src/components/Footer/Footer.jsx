@@ -1,52 +1,51 @@
 import React from "react";
+import LogoImage from "../../assets/images/homeimg.jpg"
 
 const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer__wrapper">
         <div className="footer__container">
-          <div className="logo">
-            <img src="images/Logo-Light.svg" alt="" />
+          <div className="footer__logo">
+            <img src={LogoImage} alt="" />
           </div>
 
           <div className="footer__nav">
-            <h3>Our Services</h3>
+            <h3>Services</h3>
             <ul>
               <li>
-                <a href="#">Mobile Development</a>
+                <a href="/services">Energy</a>
               </li>
               <li>
-                <a href="#">Web App Development</a>
+                <a href="/services">Finance</a>
               </li>
               <li>
-                <a href="#">Theme Development</a>
+                <a href="/services">Technology</a>
+              </li>
+
+            </ul>
+          </div>
+
+          <div className="footer__nav">
+            <h3>About</h3>
+            <ul>
+              <li>
+                <a href="/about">Mission</a>
               </li>
               <li>
-                <a href="#">SEO</a>
+                <a href="/about">Vision</a>
+              </li>
+              <li>
+                <a href="/about">Values</a>
+              </li>
+              <li>
+                <a href="/contact">Contact</a>
               </li>
             </ul>
           </div>
 
           <div className="footer__nav">
-            <h3>About Us</h3>
-            <ul>
-              <li>
-                <a href="#">GT Web Design</a>
-              </li>
-              <li>
-                <a href="#">Terms & Conditions</a>
-              </li>
-              <li>
-                <a href="#">Privacy Policy</a>
-              </li>
-              <li>
-                <a href="#">Contact</a>
-              </li>
-            </ul>
-          </div>
-
-          <div className="footer__nav">
-            <h3>Get Social</h3>
+            <h3>Follow Us</h3>
 
             <div className="footer__social">
               <a href="#">
@@ -62,7 +61,7 @@ const Footer = () => {
               </a>
             </div>
 
-            <p>info@gtcoding.net</p>
+            <p>info@hitoai.com</p>
           </div>
         </div>
       </div>

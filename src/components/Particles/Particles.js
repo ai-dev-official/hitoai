@@ -5,8 +5,15 @@ canvas.height = window.innerHeight;
 
 
 let area=Math.sqrt(canvas.width*canvas.height);
-let radiusLength = canvas.width * canvas.height / 80000;
+let radiusLength = canvas.width * canvas.height / 8000;
 
+function resizeCanvas() {
+    canvas.width = document.documentElement.scrollWidth;
+    canvas.height = document.documentElement.scrollHeight;
+  }
+  
+  window.addEventListener('resize', resizeCanvas);
+  resizeCanvas();
 
 let particlesArray;
 
