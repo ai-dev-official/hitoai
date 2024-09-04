@@ -46,7 +46,7 @@ const Updates = () => {
              <Paragraph description={update.content}/>
             </div>
 
-            <div className="login__button">
+            <div className="update__login">
               <a className='btn' href="/login">Test Demo</a>
             </div>
           </div>
