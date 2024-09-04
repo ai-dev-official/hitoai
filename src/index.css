@@ -13,6 +13,7 @@
   --text-color-light: #1a1a1b;    /* hsl(210, 8%, 65%) */
   --input-color: #e1f1f5;         /* hsl(210, 70%, 96%) */
   --light-color: #ffffff;
+  --light-white:#ffffff;
   --box-color: #ebebeb;
   --placeholder-color: #5f5c5c;
   --input-border: #bbb;
@@ -32,6 +33,7 @@ body.dark-theme,
   --box-color: #9d9a9ade;
   --placeholder-color: #262626;
   --input-border: #bbb;
+  --light-white:#bbb; 
   --title-color: #ffffff;           /* hsl(210, 8%, 95%) */
   --text-color: #fbfbfb;            /* hsl(210, 8%, 75%) */
   --input-color: #e9e9eb;           /* hsl(210, 29%, 16%) */
@@ -99,6 +101,10 @@ section {
   bottom: -1vw;
   left: 50%;
   transform: translateX(-50%);
+}
+
+.dark__bg {
+    color: var(--light-white);
 }
 
 .wrapper {
@@ -1064,7 +1070,9 @@ section h2::after {
   color: var(--title-color);
 }
 
-.booking__form__wrapper {}
+.booking__form__wrapper {
+  width: 60vw;
+}
 
 .booking__grid {
   display: grid;

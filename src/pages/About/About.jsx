@@ -9,7 +9,7 @@ const About = () => {
             <div className="about__leading">
                     <div className="about__trailing__top__content">
                         <h1>At <br /> HitoAI</h1>
-                        <Paragraph description={"Our team consists ofindustry-leading AI scientists, engineers, and business strategists who bring a wealth of knowledge and experience to the table. With a track record of successful implementations, we ensure your projects are handled by the best minds in the field."} />
+                        <Paragraph isdark={true} description={"Our team consists ofindustry-leading AI scientists, engineers, and business strategists who bring a wealth of knowledge and experience to the table. With a track record of successful implementations, we ensure your projects are handled by the best minds in the field."} />
                     </div>
             
             </div>
