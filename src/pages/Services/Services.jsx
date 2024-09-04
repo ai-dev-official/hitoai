@@ -3,6 +3,7 @@ import EnergyImage from "../../assets/images/energy.jpg"
 import FinanceImage from "../../assets/images/finance.png"
 import TechImage from "../../assets/images/tech.png"
 import Booking from '../../components/Booking/Booking'
+import Paragraph from '../../components/Paragraph/Paragraph'
 
 const Products = () => {
 
@@ -31,7 +32,7 @@ const Products = () => {
     ]
 
     return (
-        <div>
+        <div className='service__wrapper'>
             {products.map((product, index) => (
                 <div key={index}  className={`product__page__wrapper ${index % 2 === 0 ? 'row-reverse' : ''}`}
                 >
@@ -40,7 +41,9 @@ const Products = () => {
                             <p>{product.title}</p>
                         </div>
                         <h4 className="product__subtitle">{product.subtitle}</h4>
-                        <div className="product__desc">{product.desc}</div>
+                        <div className="product__desc">
+                        <Paragraph description={product.desc}/>
+                        </div>
                     </div>
 
                     <div className="product__trailing">
@@ -51,9 +54,13 @@ const Products = () => {
                             <img src={product.img} alt={product.title} />
                         </div>
                     </div>
+
+                    
                 </div>
             ))}
-            <Booking />
+            <div className="service__button__wrapper">
+            <a className='btn' href="/contact">Get In Touch</a>
+            </div>
         </div>
     )
 }

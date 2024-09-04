@@ -6,6 +6,8 @@ import Contact from './pages/Contact/Contact';
 import Services from './pages/Services/Services';
 import Products from './pages/Products/Products';
 import Updates from './pages/Updates/Updates';
+import Login from './pages/Login/Login';
+import About from './pages/About/About';
 
 
 
@@ -20,7 +22,9 @@ function App() {
           <Route path="/products" element={<Products />} />
           <Route path="/services" element={<Services />} />
           <Route path="/updates" element={<Updates />} />
+          <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </Router>
       <Footer />

@@ -78,6 +78,9 @@ const Header = () => {
           <li onClick={handleMobileMenuItemClick}>
             <a href="/contact">Contact</a>
           </li>
+          <li onClick={handleMobileMenuItemClick}>
+            <a href="/contact">Contact</a>
+          </li>
         </ul>
       </div>
 
@@ -85,7 +88,7 @@ const Header = () => {
       <nav className="desktop__nav">
        <div className="nav__wrapper">
        <div className="logo">
-          <a href="#">
+          <a href="/">
             <img src={LogoImage} alt="logo" className="logo__img"/>
           </a>
         </div>
