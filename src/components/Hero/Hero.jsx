@@ -19,8 +19,9 @@ const Hero = () => {
           </p>
           </div>
           <div className="home__buttons">
-          <a href="#" className="btn">Get Started</a>
-          <a href="#" className="btn cyan">Learn More</a>
+          <a href="/contact" className="btn">Get Started</a>
+          <a href="/products" className="btn cyan">Learn More</a>
+          
           </div>
         </div>
 
