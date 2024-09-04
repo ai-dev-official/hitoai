@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { memo, useState } from "react";
 import ProductItem from "./ProductItem";
 import ProductImage from "../../assets/images/net.jpg";
 import AltProductImage from "../../assets/images/well.jpg"; 
@@ -66,4 +66,4 @@ const Products = () => {
   );
 };
 
-export default Products;
+export default memo(Products);

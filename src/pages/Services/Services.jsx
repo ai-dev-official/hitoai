@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import EnergyImage from "../../assets/images/energy.jpg"
 import FinanceImage from "../../assets/images/finance.png"
 import TechImage from "../../assets/images/tech.png"
@@ -65,4 +65,4 @@ const Products = () => {
     )
 }
 
-export default Products;
+export default memo(Products);

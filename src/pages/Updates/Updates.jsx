@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import { FaAngleDown } from "react-icons/fa";
 import UpdateImage from "../../assets/images/model1.jpg"
 import Paragraph from '../../components/Paragraph/Paragraph';
@@ -56,4 +56,4 @@ const Updates = () => {
   )
 }
 
-export default Updates
+export default memo(Updates)

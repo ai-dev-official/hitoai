@@ -23,20 +23,20 @@ const Header = () => {
     setIsMobileNavActive(false);
   };
 
-  // Intersection Observer for desktop navigation
   useEffect(() => {
     const options = {
       threshold: 0.8,
     };
-
+  
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
+        console.log(`Observing: ${entry.target.id}, isIntersecting: ${entry.isIntersecting}`);
         if (entry.isIntersecting && entry.intersectionRatio >= 0.2) {
           const currentActive = document.querySelector('.desktop__nav a.active');
           if (currentActive) {
             currentActive.classList.remove('active');
           }
-
+  
           const newActive = document.querySelector(`.desktop__nav a[href="#${entry.target.id}"]`);
           if (newActive) {
             newActive.classList.add('active');
@@ -44,11 +44,11 @@ const Header = () => {
         }
       });
     }, options);
-
+  
     sectionRefs.current.forEach((section) => {
       observer.observe(section);
     });
-
+  
     return () => {
       sectionRefs.current.forEach((section) => {
         observer.unobserve(section);
@@ -128,12 +128,12 @@ const Header = () => {
       </nav>
 
       {/* Sections to observe (for intersection observer) */}
-      {/* <div id="home" ref={(el) => sectionRefs.current[0] = el}></div>
+      <div id="home" ref={(el) => sectionRefs.current[0] = el}></div>
       <div id="products" ref={(el) => sectionRefs.current[1] = el}></div>
       <div id="services" ref={(el) => sectionRefs.current[2] = el}></div>
       <div id="updates" ref={(el) => sectionRefs.current[3] = el}></div>
       <div id="about" ref={(el) => sectionRefs.current[4] = el}></div>
-      <div id="contact" ref={(el) => sectionRefs.current[5] = el}></div> */}
+      <div id="contact" ref={(el) => sectionRefs.current[5] = el}></div>
     </div>
   );
 };

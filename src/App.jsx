@@ -9,6 +9,8 @@ import Updates from './pages/Updates/Updates';
 import Login from './pages/Login/Login';
 import About from './pages/About/About';
 import { ThemeProvider } from '../context/ThemeContext';
+import Register from './pages/Register/Register';
+import Search from './pages/Search/Search';
 
 
 function App() {
@@ -24,7 +26,9 @@ function App() {
           <Route path="/updates" element={<Updates />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/search" element={<Search />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
       </Router>
       <Footer />

@@ -1,6 +1,7 @@
 import React from 'react';
 
-const Search = ({ searchTerm, setSearchTerm }) => {
+
+const SearchModule = ({ searchTerm, setSearchModuleTerm }) => {
   return (
     <input
       type="text"
@@ -12,4 +13,4 @@ const Search = ({ searchTerm, setSearchTerm }) => {
   );
 };
 
-export default Search;
+export default SearchModule;

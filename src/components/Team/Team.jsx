@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { memo, useState } from 'react'
 import ArslanImage from "../../assets/images/arslan.png"
 import AswanthImage from "../../assets/images/aswanth.png"
 import BaqerImage from "../../assets/images/baqer.jpg"
@@ -148,4 +148,4 @@ const Team = () => {
   )
 }
 
-export default Team
+export default memo(Team)
