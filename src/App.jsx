@@ -8,13 +8,13 @@ import Products from './pages/Products/Products';
 import Updates from './pages/Updates/Updates';
 import Login from './pages/Login/Login';
 import About from './pages/About/About';
-
+import { ThemeProvider } from '../context/ThemeContext';
 
 
 function App() {
 
   return (
-    <>
+    <ThemeProvider>
       <Header />
       <Router>
         <Routes>
@@ -28,8 +28,7 @@ function App() {
         </Routes>
       </Router>
       <Footer />
-    </>
-
+    </ThemeProvider>
   )
 }
 

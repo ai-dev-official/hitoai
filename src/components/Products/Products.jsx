@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ProductItem from "./ProductItem";
 import ProductImage from "../../assets/images/net.jpg";
-import AltProductImage from "../../assets/images/net.jpg"; // Alternate product image
+import AltProductImage from "../../assets/images/well.jpg"; 
 
 const Products = () => {
   const [isSecondProductVisible, setIsSecondProductVisible] = useState(false);

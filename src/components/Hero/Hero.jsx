@@ -20,7 +20,7 @@ const Hero = () => {
           </div>
           <div className="home__buttons">
           <a href="/contact" className="btn">Get Started</a>
-          <a href="/products" className="btn cyan">Learn More</a>
+          <a href="/products" className="btn btn__light">Learn More</a>
           
           </div>
         </div>
@@ -29,7 +29,9 @@ const Hero = () => {
           <img src={HomeImg} alt="Hitoai" />
         </div>
         </div>
-        <img className="home__wrapper" src={HomeBackground} alt="" />
+        <div className="home__wave__1__wrapper"></div>
+        <div className="home__wave__2__wrapper"></div>
+
       </section>
   )
 }

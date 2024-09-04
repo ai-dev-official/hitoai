@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import "../../index.css";
 import { BsFillMenuButtonWideFill } from "react-icons/bs";
 import LogoImage from "../../assets/images/newlogo.png"
+import ToggleMode from '../ToggleMode/ToggleMode';
 
 
 
@@ -81,6 +82,9 @@ const Header = () => {
           <li onClick={handleMobileMenuItemClick}>
             <a href="/contact">Contact</a>
           </li>
+          <li>
+            <a><ToggleMode className={`change-theme`} /></a>
+          </li>
         </ul>
       </div>
 
@@ -115,6 +119,9 @@ const Header = () => {
           </li>
           <li>
             <a href="/contact" className="btn">Contact</a>
+          </li>
+          <li>
+            <a><ToggleMode className={`change-theme`} /></a>
           </li>
         </ul>
        </div>

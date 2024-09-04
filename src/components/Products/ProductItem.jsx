@@ -22,7 +22,6 @@ const ProductItem = ({ description, packImages, productImage, isSusNet }) => {
               <div className="product__item__id">
                 <h1 >{image.id}</h1>
               </div>
-              {/* <img src={image.src} alt={image.alt} /> */}
               <div className="product__item__text">
                 <p>{image.text}</p>
               </div>

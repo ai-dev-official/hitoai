@@ -1,0 +1,19 @@
+<svg width="1440" height="699" viewBox="0 0 1440 699" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <!-- Define the linear gradient -->
+        <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color: rgba(216, 0, 50, 0.53); stop-opacity: 1;" />
+            <stop offset="100%" style="stop-color: rgba(216, 0, 50, 1); stop-opacity: 1;" />
+        </linearGradient>
+        <!-- Define the clip path -->
+        <clipPath id="wave">
+            <path d="M 0,700 L 0,325 C 97,288.875 194,252.75 327,247 C 460,241.25 629,265.875 754,256 C 879,246.12500000000003 960,201.75 1067,170 C 1174,138.25 1307,119.125 1440,100 L 1440,700 L 0,700 Z" />
+            <path d="M 0,700 L 0,558 C 135.89285714285717,608.2321428571429 271.78571428571433,658.4642857142857 393,642 C 514.2142857142857,625.5357142857143 620.7499999999999,542.375 720,503 C 819.2500000000001,463.62499999999994 911.2142857142858,468.03571428571433 1030,447 C 1148.7857142857142,425.96428571428567 1294.392857142857,379.48214285714283 1440,333 L 1440,700 L 0,700 Z" />
+        </clipPath>
+    </defs>
+    <!-- Apply gradient and clip path to a rectangle -->
+    <rect width="100%" height="100%" fill="url(#gradient)" clip-path="url(#wave)" />
+</svg>
+
+
+
