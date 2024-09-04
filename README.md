@@ -13,26 +13,23 @@ Table of Contents
     Testing
     Deployment
     Contributing
-    License
     Contact
 
 Project Overview
 
-    Description: This project aims to create a React version of HitoAI website previously developed in Wordpress. 
+    Description: This project is a React version of HitoAI website previously developed in Wordpress. 
     This React version has unique implementation that promotes usability and accessibility. 
-    My motivation to build this application is to showcase my react skills as requirement my HitoAI internship application.
+    My motivation to build this application is to showcase my react skills as a requirement for my HitoAI internship application.
 
 Features
 
-    List the main features of the application, such as:
+    Main features:
         Responsive Design
         Dark/Light Mode Toggle
-        Custom Hooks
         State Management with Context API or Redux
         Authentication (JWT, OAuth) // Todo
         Email using emailjs
         Form Validation
-        Error Handling
         Lazy Loading and Code Splitting
 
 Tech Stack

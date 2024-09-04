@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import emailjs from 'emailjs-com';
+import styles from "./Booking";
+
 
 const Services = () => {
-  // State variables to handle form inputs
+  const [showModal, setShowModal] = useState(false); 
+  const [errors, setErrors] = useState({});
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -11,55 +14,96 @@ const Services = () => {
     business: '',
     message: '',
   });
+  const form = useRef();
 
-  // Handle change in form inputs
+  const service_id = import.meta.env.VITE_SERVICE_ID;
+  const template_id = import.meta.env.VITE_TEMPLATE_ID;
+  const public_key = import.meta.env.VITE_PUBLIC_KEY;
+
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,
     }));
+    setErrors((prevErrors) => ({
+      ...prevErrors,
+      [name]: '',
+    }));
   };
 
-  // Handle form submission
+  const validateForm = () => {
+    const newErrors = {};
+    
+    if (!formData.name.trim()) {
+      newErrors.name = 'Name is required.';
+    }
+    if (!formData.phone.trim()) {
+      newErrors.phone = 'Phone number is required.';
+    } else if (!/^[0-9()#&+*-=.\s]+$/.test(formData.phone)) {
+      newErrors.phone = 'Invalid phone number format.';
+    }
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email is required.';
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      newErrors.email = 'Invalid email format.';
+    }
+    if (!formData.business.trim()) {
+      newErrors.business = 'Business characterization is required.';
+    }
+    if (!formData.message.trim()) {
+      newErrors.message = 'Message is required.';
+    }
+
+    return newErrors;
+  };
+
+
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // EmailJS parameters
-    const templateParams = {
-      name: formData.name,
-      phone: formData.phone,
-      email: formData.email,
-      service: formData.service,
-      business: formData.business,
-      message: formData.message,
-    };
+    const validationErrors = validateForm();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
+    }
 
-    // Sending email using EmailJS
-    emailjs.send(
-      process.env.EMAILJS_SERVICE_ID,
-      process.env.EMAILJS_TEMPLATE_ID,
-      templateParams,
-      process.env.EMAILJS_PUBLIC_KEY,
-    )
-    .then((response) => {
-      console.log('SUCCESS!', response.status, response.text);
-      alert('Your message has been sent successfully!');
-    })
-    .catch((err) => {
-      console.error('FAILED...', err);
-      alert('Failed to send the message, please try again.');
-    });
+    emailjs
+      .sendForm(
+        service_id,
+        template_id,
+        form.current,
+        public_key,
+        )
+      .then(
+        (result) => {
+          console.log(result.text);
+          setShowModal(true); 
+           // Clear the form data
+          setFormData({
+            name: '',
+            phone: '',
+            email: '',
+            service: 'Consultancy in AI',
+            business: '',
+            message: '',
+          });
+          setErrors({}); 
 
-    // Optionally reset form fields
-    setFormData({
-      name: '',
-      phone: '',
-      email: '',
-      service: 'Consultancy in AI',
-      business: '',
-      message: '',
-    });
+          form.current.reset();
+        },
+        (error) => {
+          console.log(error.text);
+          alert("Error sending message!");
+        }
+      );
+  };
+
+
+  const closeModal = () => {
+    setShowModal(false);
   };
 
   return (
@@ -68,11 +112,13 @@ const Services = () => {
         Fill out your details below with the service that you need, we’ll get back to you to book an appointment.
       </h3>
       <div className="booking__form__wrapper">
-        <form onSubmit={handleSubmit} name="FooterForm">
-          <input type="hidden" name="post_id" value="267" />
-          <input type="hidden" name="form_id" value="6cbbec7b" />
-          <input type="hidden" name="referer_title" value="Services - HitoAI" />
-          <input type="hidden" name="queried_id" value="267" />
+        <form 
+        // name="FooterForm"
+        ref={form}
+        onSubmit={handleSubmit} 
+        encType="multipart/form-data"
+        >
+
 
           <div className='booking__input__wrapper'>
             <div className="booking__grid">
@@ -87,6 +133,7 @@ const Services = () => {
                     onChange={handleChange}
                     required
                   />
+                  {errors.name && <span className="error">{errors.name}</span>}
                 </div>
               </div>
 
@@ -100,9 +147,10 @@ const Services = () => {
                     value={formData.phone}
                     onChange={handleChange}
                     required
-                    pattern="[0-9()#&+*-=.]+"
+                    pattern="[0-9()#&+*-=.\s]+" // Allow spaces and common phone characters
                     title="Only numbers and phone characters (#, -, *, etc) are accepted."
                   />
+                  {errors.phone && <span className="error">{errors.phone}</span>}
                 </div>
               </div>
             </div>
@@ -119,6 +167,7 @@ const Services = () => {
                     onChange={handleChange}
                     required
                   />
+                  {errors.email && <span className="error">{errors.email}</span>}
                 </div>
               </div>
 
@@ -133,6 +182,7 @@ const Services = () => {
                     onChange={handleChange}
                     required
                   />
+                  {errors.business && <span className="error">{errors.business}</span>}
                 </div>
               </div>
             </div>
@@ -165,15 +215,33 @@ const Services = () => {
                   onChange={handleChange}
                   required
                 ></textarea>
+                {errors.message && <span className="error">{errors.message}</span>}
               </div>
             </div>
 
             <div className='booking__submit'>
-              <a type="submit" className='btn'>Submit Now</a>
+              <a><button type="submit" className='btn'>Submit Now</button></a>
             </div>
           </div>
         </form>
       </div>
+
+      {/* Modal */}
+      {showModal && (
+        <div className={"modal__booking"}>
+            <div className={"container__booking"}>
+              <h1 className={"title__booking"}>Your message was sent successfully!</h1>
+              <div className={"main__booking"}>
+                <h3 className={"htext__booking"}>
+                  Thanks, a team member will get back to you soon!
+                </h3>
+                <a className={"btn"} onClick={closeModal}>
+                  Close
+                </a>
+              </div>
+            </div>
+        </div>
+      )}
     </div>
   );
 };
