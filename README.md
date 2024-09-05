@@ -205,9 +205,6 @@ Contributing
         Push to the branch (git push origin feature/YourFeature)
         Open a pull request
 
-License
-
-    Specify the license under which the project is distributed.
 
 Contact
 
