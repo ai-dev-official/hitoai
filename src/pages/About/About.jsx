@@ -51,8 +51,7 @@ const About = () => {
                 <div className="about__buttom__trailing__top">
                     <div className="about__trailing__top__content">
                         <h1>Why Choose HitoAI? Discover Our Innovative Solutions</h1>
-                        <p>
-                        At HitoAI, we believe in innovation that works for the betterment of the environment and society. Our AI-driven solutions are designed to optimise energy usage, reduce costs, and promote sustainability. With our dedicated team of experts and cutting-edge technology, we are committed to providing smart and efficient solutions that make a positive impact. Choose HitoAI and join us in revolutionising energy management for a better tomorrow. 
+                        <p>At HitoAI, we believe in innovation that works for the betterment of the environment and society. Our AI-driven solutions are designed to optimise energy usage, reduce costs, and promote sustainability. With our dedicated team of experts and cutting-edge technology, we are committed to providing smart and efficient solutions that make a positive impact. Choose HitoAI and join us in revolutionising energy management for a better tomorrow. 
                         </p>
                     </div>
                 </div>
