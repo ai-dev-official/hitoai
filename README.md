@@ -68,12 +68,12 @@ Usage
 
     Development Server: How to run the app locally:
 
-    npm run dev
+    yarn run dev
 
 
 Production Build: How to build the app for production:
 
-    npm run build
+    yarn run build
 
 
 Folder Structure
