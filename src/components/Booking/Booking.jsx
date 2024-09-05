@@ -220,7 +220,7 @@ const Services = () => {
             </div>
 
             <div className='booking__submit'>
-              <a><button type="submit" className='btn'>Submit Now</button></a>
+              <a><button type="submit" className='btn booking__button'>Submit Now</button></a>
             </div>
           </div>
         </form>
